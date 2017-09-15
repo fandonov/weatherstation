@@ -1,0 +1,9 @@
+* moon phases
+* some kind of input for altitude (sensor reading not precise)
+* DONE four images instead of three - sun, cloud over sun, cloud, rain cloud
+* images for: sun, sun cloud, cloud, small rain, rain, storm
+* все пак да го направя по формулата, а не с табулиране, Arduino-то поддържа float
+* докато събира данните за Замбретти, може да показва картинка на времето по 
+барометрите аппове от iPhone. 
+* първата стойност в pressureArray да се въвежда веднага след пускане
+* да се сложи гърмотевица
