@@ -1,0 +1,11 @@
+Adafruit_Sensor
+ https://github.com/adafruit/Adafruit_Sensor
+
+Adafruit_BME280
+https://github.com/adafruit/Adafruit_BME280_Library
+
+epd
+http://www.waveshare.com/w/upload/e/eb/4.3inch-e-Paper-Code.7z
+
+RTClib 
+https://github.com/adafruit/RTClib
