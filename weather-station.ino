@@ -472,7 +472,8 @@ void loop() {
      sprintf(pStr, "%d hPa", pressure);
      sprintf(pseaStr, "%d hPa", seapressure);
      sprintf(dateStr, "%02d.%02d.%d", now.day(), now.month(),now.year());
-     sprintf(timeStr, "%d:%02d", now.hour(), now.minute());
+     sprintf(timeStr, "%02d:%02d", now.hour(), now.minute());
+     
      //sprintf(pressureHistory, "%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,",pressureArray[0],pressureArray[1],pressureArray[2],
      //pressureArray[3],pressureArray[4],pressureArray[5],pressureArray[6],pressureArray[7],pressureArray[8],pressureArray[9]);
      //sprintf(pressureHistory, "%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,",calc_zambretti(1030,1040,1),calc_zambretti(1020,1030,1),calc_zambretti(1010,1020,1),calc_zambretti(1000,1010,1),
@@ -511,7 +512,7 @@ void loop() {
 //     Z=6;
 
      if (pressureArray[9]>0 and pressureArray[0]>0){
-      if (pressureArray[9]+pressureArray[8]+pressureArray[7]>pressureArray[0]+pressureArray[1]+pressureArray[2]){
+        if (pressureArray[9]+pressureArray[8]+pressureArray[7]-pressureArray[0]-pressureArray[1]-pressureArray[2]>=3){
       //RAISING
        draw_arrow(670,450,1);
         if (Z<3){
@@ -526,24 +527,8 @@ void loop() {
           rainy(300,300);
           }
       }
-      else if (pressureArray[9]==pressureArray[0]){
-       //STEADY
-        draw_arrow(670,450,0);
-       if (Z<5)
-          sunny(400,350);
-        else if (Z>=5 and Z<=11){
-          sunny_cloudy(400,350);
-        }
-        else if (Z>11 and Z<14)
-          cloudy(300,300);
-        else if (Z>=14 and Z<19){
-          worsening(400,350);
-        }
-        else if (Z>19){
-          rainy(300,300);
-        }
-      }
-      else{
+
+        else if (pressureArray[0]+pressureArray[1]+pressureArray[2]-pressureArray[9]-pressureArray[8]-pressureArray[7]>=3){
       //FALLING
         draw_arrow(670,450,-1);
         if (Z<4)
@@ -559,6 +544,23 @@ void loop() {
         else if (Z>=21){
           rainy(300,300);
           }
+      }
+      else{
+       //STEADY
+        draw_arrow(670,450,0);
+       if (Z<5)
+          sunny(400,350);
+        else if (Z>=5 and Z<=11){
+          sunny_cloudy(400,350);
+        }
+        else if (Z>11 and Z<14)
+          cloudy(300,300);
+        else if (Z>=14 and Z<19){
+          worsening(400,350);
+        }
+        else if (Z>19){
+          rainy(300,300);
+        }
       }
      } 
      else{
