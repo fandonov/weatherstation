@@ -17,11 +17,18 @@
 
 #include <Wire.h>
 #include <SPI.h>
+// http://librarymanager/All#Adafruit_Unified_Sensor_abstraction_layer
+// https://github.com/adafruit/Adafruit_Sensor
 #include <Adafruit_Sensor.h>
+// http://librarymanager/All#Adafruit_BME280
+// https://github.com/adafruit/Adafruit_BME280_Library
 #include <Adafruit_BME280.h>
+// http://www.waveshare.com/w/upload/e/eb/4.3inch-e-Paper-Code.7z
 #include <epd.h>
 #include<stdlib.h>
 #include <math.h>
+// http://librarymanager/All#RTClib_fork_of_jeelab
+// https://github.com/adafruit/RTClib
 #include "RTClib.h"
 
 #define BME_SCK 13
